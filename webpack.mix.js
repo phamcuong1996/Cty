@@ -1,0 +1,186 @@
+const mix = require('laravel-mix');
+const webpack = require('webpack');
+let path = require('path');
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel applications. By default, we are compiling the CSS
+ | file for the application as well as bundling up all the JS files.
+ |
+ */
+
+mix.postCss(
+    'resources/css/test.css',
+'public/css',[
+])
+.postCss(
+    'resources/css/login.css',
+    'public/css',[
+    ]
+)
+.copyDirectory('vendor/almasaeed2010/adminlte/plugins/fontawesome-free', 'public/font')
+.postCss(
+    'vendor/almasaeed2010/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'vendor/almasaeed2010/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'vendor/almasaeed2010/adminlte/dist/css/adminlte.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'vendor/almasaeed2010/adminlte/plugins/jqvmap/jqvmap.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'vendor/almasaeed2010/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'vendor/almasaeed2010/adminlte/plugins/daterangepicker/daterangepicker.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'vendor/almasaeed2010/adminlte/plugins/summernote/summernote-bs4.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'resources/css/form.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'resources/css/bootstrap.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'resources/css/tailwind.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'vendor/almasaeed2010/adminlte/plugins/select2/css/select2.min.css',
+    'public/css',[
+    ]
+)
+.postCss(
+    'resources/css/production.css',
+    'public/css',[
+    ]
+)
+.js(
+    'resources/js/app.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/jquery-ui/jquery-ui.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/chart.js/Chart.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/sparklines/sparkline.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/jqvmap/jquery.vmap.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/jquery-knob/jquery.knob.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/daterangepicker/daterangepicker.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/summernote/summernote-bs4.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/moment/moment.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/dist/js/adminlte.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/dist/js/demo.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/dist/js/pages/dashboard.js',
+    'public/js',[
+    ]
+)
+.js(
+    'resources/js/bootstrap.bundle.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/jquery/jquery.min.js',
+    'public/js',[
+    ]
+)
+.copy(
+    'vendor/almasaeed2010/adminlte/plugins/select2/js/select2.full.min.js',
+    'public/js',[
+    ]
+)  
+.copyDirectory('vendor/almasaeed2010/adminlte/dist/img', 'public/img')
+.version();
+
+
+
+
+
