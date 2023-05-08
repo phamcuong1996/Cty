@@ -9,12 +9,13 @@
         "almasaeed2010/adminlte": "~3.2",
         "doctrine/dbal": "^3.6",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
         "joedixon/laravel-translation": "^1.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.8",
-        "petercoles/multilingual-language-list": "^1.16"
+        "petercoles/multilingual-language-list": "^1.16",
+        "thiagoalessio/tesseract_ocr": "1.0.0-RC",
+        "wapnen/google-cloud-vision-php": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

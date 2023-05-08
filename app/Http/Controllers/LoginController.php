@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -36,8 +37,19 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // return view('admins.index', compact('languages'));
-        return view('page.login');
+        if ($request->has('image')) {
+
+            try {
+                $file = $request->file('image');
+                $file_name = time() . $file->getClientOriginalName();
+                $file->move(public_path('img'), $file_name);
+                echo (new \TesseractOCR(public_path('img') . '/' . $file_name))
+                    ->run();
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+            die();
+        }
     }
 
     public function category(Request $request)

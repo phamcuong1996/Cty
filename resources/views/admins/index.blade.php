@@ -15,7 +15,7 @@
         <div class="dropdown">
             <button class="dropbtn">
                 @if(App::getLocale() == 'vi')
-                    <span class="flag-icon flag-icon-vn mr-2"></span>
+                <span class="flag-icon flag-icon-vn mr-2"></span>
                 @elseif(App::getLocale() == 'en')
                 <span class="flag-icon flag-icon-us mr-2"></span>
                 @elseif(App::getLocale() == 'ja')
@@ -26,29 +26,29 @@
             </button>
             <div class="dropdown-content">
                 @foreach($languages as $lang)
-                    @foreach(PeterColes\Languages\LanguagesFacade::lookup('major',App::getLocale()) as $key=>$language)
-                        @if($lang == $key)
-                        @if ($lang != App::getLocale())
-                            @if($lang == 'vi')
-                                <a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
-                            class="flag-icon flag-icon-vn mr-2"></span> {{$language}}
-                                </a>
-                            @elseif($lang == 'en')
-                                <a   a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
-                            class="flag-icon flag-icon-us mr-2"></span> {{$language}}
-                                </a>
-                            @elseif($lang == 'ja')
-                                <a   a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
-                            class="flag-icon flag-icon-jp mr-2"></span> {{$language}}
-                                </a>
-                            @else
-                                <a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
-                            class="flag-icon flag-icon-{{$lang}} mr-2"></span> {{$language}}
-                                </a>
-                            @endif
-                            @endif
-                        @endif
-                    @endforeach
+                @foreach(PeterColes\Languages\LanguagesFacade::lookup('major',App::getLocale()) as $key=>$language)
+                @if($lang == $key)
+                @if ($lang != App::getLocale())
+                @if($lang == 'vi')
+                <a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
+                        class="flag-icon flag-icon-vn mr-2"></span> {{$language}}
+                </a>
+                @elseif($lang == 'en')
+                <a a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
+                        class="flag-icon flag-icon-us mr-2"></span> {{$language}}
+                </a>
+                @elseif($lang == 'ja')
+                <a a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
+                        class="flag-icon flag-icon-jp mr-2"></span> {{$language}}
+                </a>
+                @else
+                <a href="{{ route('language', [$lang]) }}" class="dropdown-item"><span
+                        class="flag-icon flag-icon-{{$lang}} mr-2"></span> {{$language}}
+                </a>
+                @endif
+                @endif
+                @endif
+                @endforeach
                 @endforeach
             </div>
         </div>
@@ -59,8 +59,10 @@
     <div class="messenge">
     </div>
     <div class="login">
-        <form action="/" method="post">
-            <div class="container">
+        <form action="{{ route('page.login') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <!-- {{ csrf_field() }} -->
+            <div class=" container">
                 <h1>{{ __('messages.Formlogin') }}</h1>
                 <label id="uname"><b>{{ __('messages.Username') }}</b></label>
                 <input type="text" placeholder="Enter Username" name="name">
@@ -75,6 +77,14 @@
                 </div>
                 <label id="psw"><b>{{ __('messages.Password') }}</b></label>
                 <input type="password" placeholder="Enter Password" name="pass">
+
+                <div class="form-group ">
+                    <label for="exampleInputPassword1">image</label>
+                    <input type="file" class="form-control" placeholder="Password" name="image">
+                    @error('manufacturing_company')
+                    <p class="text-danger mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
                 <button type="submit">{{ __('messages.Login') }}</button>
                 <label>
